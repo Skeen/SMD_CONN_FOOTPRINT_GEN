@@ -10,6 +10,6 @@ run: build/output.js
 
 gen: build/output.js
 	mkdir -p output/
-	node SMD_pad_run.js 20 1.27
-	node SMD_pad_run.js 20 2
-	node SMD_pad_run.js 20 2.54
+	node SMD_pad_run.js 40 1.27
+	node SMD_pad_run.js 40 2
+	node SMD_pad_run.js 40 2.54

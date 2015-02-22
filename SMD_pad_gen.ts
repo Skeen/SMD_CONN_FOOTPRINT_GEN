@@ -16,6 +16,13 @@ kicad_mod += "(fp_text value \"" + part_name + "\" (at 0 -4) (layer F.Fab)\n";
 kicad_mod += "  (effects (font (size 1.5 1.5) (thickness 0.15)))\n";
 kicad_mod += ")\n";
 
+var half_pin = pin_spacing / 2;
+var half_conn = (pin_spacing / 2) * num_pins;
+kicad_mod += "(fp_line (start -" + half_conn + " -" + half_pin + ") (end  " + half_conn + " -" + half_pin + ") (layer F.SilkS) (width 0.15))\n";
+kicad_mod += "(fp_line (start  " + half_conn + " -" + half_pin + ") (end  " + half_conn + "  " + half_pin + ") (layer F.SilkS) (width 0.15))\n";
+kicad_mod += "(fp_line (start  " + half_conn + "  " + half_pin + ") (end -" + half_conn + "  " + half_pin + ") (layer F.SilkS) (width 0.15))\n";
+kicad_mod += "(fp_line (start -" + half_conn + "  " + half_pin + ") (end -" + half_conn + " -" + half_pin + ") (layer F.SilkS) (width 0.15))\n";
+
 var y_coord : number = pad_length / 2 - pad_length/8;
 var x_coord : number = -pin_spacing * num_pins/2 - pin_spacing/2;
 
